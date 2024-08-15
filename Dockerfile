@@ -1,9 +1,11 @@
 FROM lancachenet/ubuntu:latest
 MAINTAINER LanCache.Net Team <team@lancache.net>
 ARG DEBIAN_FRONTEND=noninteractive
+
 COPY overlay/ /
+
 RUN apt-get update && \
-    apt-get install -y nginx-full inotify-tools --no-install-recommends && \
+    apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" nginx-full inotify-tools --no-install-recommends && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/*
 RUN \
