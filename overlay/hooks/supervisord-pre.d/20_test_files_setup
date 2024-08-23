@@ -5,7 +5,7 @@ if [ -s /etc/DOCUMENT_ROOT ]; then
 fi
 
 # If our document root is empty - then copy over a suite of test files
-echo -n "Checking if /var/www/$DOCUMENT_ROOT is empty - "
+echo -n "   Checking if /var/www/$DOCUMENT_ROOT is empty - "
 DOC_CHECK=$(find /var/www/$DOCUMENT_ROOT -maxdepth 0 -empty -exec echo EMPTY \;)
 if [ "$DOC_CHECK" == "EMPTY" ]; then
   echo "Yes - copying content"
