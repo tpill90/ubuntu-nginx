@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO what does this do?
 
 if [ -s /etc/DOCUMENT_ROOT ]; then
     DOCUMENT_ROOT=`cat /etc/DOCUMENT_ROOT`
